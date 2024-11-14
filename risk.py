@@ -86,7 +86,7 @@ elif data_type == "Bar Chart (Numerical Variables relationship to Status)":
     selected_num_col = st.sidebar.selectbox("Select a Numerical Column", numerical_columns)
 
     # Calculate median values for the selected column grouped by target variable
-    median_values = risk.groupby(target_variable)[selected_num_col].median().reset_index()
+    median_values = risk.groupby(target_variable)[selected_num_col].mean().reset_index()
 
     # Plot bar chart of median values
     fig = px.bar(median_values, x=target_variable, y=selected_num_col,
