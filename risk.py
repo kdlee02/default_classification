@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import klib
 import altair as alt
-from sklearn.impute import SimpleImputer
 import numpy as np
-from sklearn.preprocessing import StandardScaler
 
 # Load data
 risk = pd.read_csv("risk.csv")
