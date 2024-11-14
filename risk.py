@@ -55,11 +55,6 @@ elif data_type == "Categorical Distribution":
 # Display correlation heatmap for numerical data
 elif data_type == "Correlation Heatmap":
     st.header("Correlation Heatmap")
-
-    # Selecting only the numeric columns and imputing missing values
-    imputer = SimpleImputer(strategy='mean')
-    risk[numerical_columns] = imputer.fit_transform(risk[numerical_columns])
-
     # Calculating the correlation matrix
     numeric_df = risk.select_dtypes(include=['float64', 'int64'])
     correlation_matrix = numeric_df.corr()
