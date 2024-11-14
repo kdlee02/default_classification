@@ -91,7 +91,7 @@ elif data_type == "Bar Chart (Numerical Variables relationship to Status)":
     # Plot bar chart of median values
     fig = px.bar(median_values, x=target_variable, y=selected_num_col,
                  title=f'Mean of {selected_num_col} by {target_variable}',
-                 labels={selected_num_col: f'Median {selected_num_col}', target_variable: target_variable})
+                 labels={selected_num_col: f'Mean {selected_num_col}', target_variable: target_variable})
     
     st.plotly_chart(fig)
 
