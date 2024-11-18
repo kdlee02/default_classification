@@ -26,7 +26,7 @@ target_variable = 'status'
 st.title("Exploratory Data Analysis (EDA)")
 
 # Sidebar for selecting data type
-st.sidebar.title("Select Data Type")
+st.sidebar.title("Select")
 data_type = st.sidebar.radio("Choose a data type", 
                              ("Numerical Distribution", "Categorical Distribution", 
                               "Correlation Heatmap", "Bar Chart (Numerical Variables relationship to Status)", 
