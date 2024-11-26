@@ -26,11 +26,7 @@ categorical_columns = risk.select_dtypes(include=['category', 'int8']).columns
 
 target_variable = 'status'
 
-
-def load_model():
-    return pickle.load(open('model.pkl', 'rb'))
-
-decision = load_model()
+decision = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 pca_1_component = pickle.load(open('pca.pkl', 'rb'))
 
