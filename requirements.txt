@@ -4,3 +4,4 @@ plotly
 altair
 numpy
 scikit-learn
+pickle
