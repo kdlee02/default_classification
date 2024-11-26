@@ -26,9 +26,9 @@ categorical_columns = risk.select_dtypes(include=['category', 'int8']).columns
 target_variable = 'status'
 
 # Load the trained model, scaler, and PCA
-decision = load('model.joblib')
-scaler = load('scaler.joblib')
-pca_1_component = load('pca.joblib')
+decision = pickle.load(open('model.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
+pca_1_component = pickle.load(open('pca.pkl', 'rb'))
 
 # Age mapping for predictions
 age_labels = {
