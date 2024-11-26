@@ -6,6 +6,7 @@ import numpy as np
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 import pickle
+from sklearn.tree import DecisionTreeClassifier
 
 # Load the data
 risk = pd.read_csv("risk.csv")
