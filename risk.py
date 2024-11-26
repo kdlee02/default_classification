@@ -26,8 +26,11 @@ categorical_columns = risk.select_dtypes(include=['category', 'int8']).columns
 
 target_variable = 'status'
 
-# Load the trained model, scaler, and PCA
-decision = pickle.load(open('model.pkl', 'rb'))
+
+def load_model():
+    return pickle.load(open('model.pkl', 'rb'))
+
+decision = load_model()
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 pca_1_component = pickle.load(open('pca.pkl', 'rb'))
 
