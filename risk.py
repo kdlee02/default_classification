@@ -141,7 +141,14 @@ elif mode == "Default Risk Prediction":
     age_label = age_labels[age_category]
 
     # Predict button
+    # Predict button
     if st.button("Predict Default Status"):
         prediction = predict_default(property_value, ltv, income, upfront_charges, age_label)
         status = "Default" if prediction == 1 else "Not Default"
-        st.success(f"Predicted Status: {status}")
+        
+        # Use Streamlit's markdown with color styling for the status
+        if prediction == 1:
+            st.markdown(f"<p style='color:red; font-size:20px;'>Predicted Status: {status}</p>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<p style='color:green; font-size:20px;'>Predicted Status: {status}</p>", unsafe_allow_html=True)
+
