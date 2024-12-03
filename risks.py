@@ -147,7 +147,7 @@ elif mode == "Default Risk Prediction":
     income *= 1000
     dtir = st.number_input("Debt to Income Ratio (총부채상환비율) = (연간 대출이자 상환액 / 연봉) * 100 ", min_value=0.0, value=45.0, step=5.0)
     interest = st.number_input("Interest rate (대출금리)", min_value=0.0, value=4.0, step=0.1)
-    interest -= 1
+    interest -= 1.0
     age_category = st.selectbox("Age (나이)", list(age_labels.keys()))
     age_label = age_labels[age_category]
     
