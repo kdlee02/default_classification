@@ -9,10 +9,10 @@ import joblib
 from tensorflow.keras.models import load_model
 
 # Load the data
-risk = pd.read_csv("risk.csv")
+risk = pd.read_csv("reduced_asdf.csv")
 
 # Drop the 'Unnamed: 0' column
-risk = risk.drop(columns=['Unnamed: 0'])
+#risk = risk.drop(columns=['Unnamed: 0'])
 
 # Convert categorical 'object' columns to 'category' for proper selection and processing
 for col in risk.select_dtypes(include='object').columns:
