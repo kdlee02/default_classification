@@ -39,8 +39,8 @@ age_labels = {
 
 # Load the binary classification model
 #model = load_model('binary_model.h5')
-model = load_model('neural.h5')
-
+#model = load_model('neural.h5')
+model = joblib.load('best_model.pkl')
 
 # Load the scaler, PCA, and label encoder
 scaler = joblib.load('scalers.pkl')
@@ -57,7 +57,8 @@ def predict_default(property_value, ltv, income, dtir, interest, age):
         final_input = np.hstack([input_scaled, [[age]]])
         # Get prediction
         prediction = model.predict(final_input)
-        return (prediction >= 0.3).astype(int)
+        return prediction
+        #return (prediction >= 0.3).astype(int)
 
 # Streamlit App Title
 st.title("Risk Analysis and Prediction")
