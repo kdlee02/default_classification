@@ -57,8 +57,7 @@ def predict_default(property_value, ltv, income, dtir, interest, age):
         final_input = np.hstack([input_scaled, [[age]]])
         # Get prediction
         prediction = model.predict(final_input)
-        return prediction
-        #return (prediction >= 0.3).astype(int)
+        return (prediction >= 0.3).astype(int)
 
 # Streamlit App Title
 st.title("Risk Analysis and Prediction")
@@ -145,11 +144,11 @@ elif mode == "Default Risk Prediction":
     # Input fields for prediction
     property_value = st.number_input("Property Value (부동산가치 억원)", min_value=0.0, value=5.0)
     property_value *= 100000
-    ltv = st.number_input("Loan-to-Value Ratio (주택담보인정비율) = (부동산 대출금액 / 주택 담보가치) * 100", min_value=0.0, value=0.5)
+    ltv = st.number_input("Loan-to-Value Ratio (주택담보인정비율) = (부동산 대출금액 / 주택 담보가치) * 100", min_value=0.0, value=50.0)
     income = st.number_input("Monthly Income (월급 백만원)", min_value=0.0, value=3.0)
     income *= 1000
-    dtir = st.number_input("Debt to Income Ratio (총부채상환비율) = (연간 대출이자 상환액 / 연봉) * 100 ", min_value=0.0, value=45.0)
-    interest = st.number_input("Interest rate (대출금리)", min_value=0.0, value=4.0)
+    dtir = st.number_input("Debt to Income Ratio (총부채상환비율) = (연간 대출이자 상환액 / 연봉) * 100 ", min_value=0.0, value=50.0)
+    interest = st.number_input("Interest rate (대출금리)", min_value=0.0, value=5.0)
     interest -= 1.0
     age_category = st.selectbox("Age (나이)", list(age_labels.keys()))
     age_label = age_labels[age_category]
